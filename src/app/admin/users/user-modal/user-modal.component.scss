@@ -1,0 +1,28 @@
+.login-card {
+    max-width: 100%;
+    margin-bottom: 8px;
+    padding: 50px 30px;
+    .mat-card-title{
+      margin-top: -60px;
+      background-image: linear-gradient(195deg,#ec407a,#d81b60);
+      padding: 20px 30px;
+      border-radius: 0.75rem;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 4px 20px 0 rgba(0,0,0,.14),0 7px 10px -5px rgba(233,30,99,.4);
+      width: fit-content;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .row{
+      display: flex;
+    }
+    .mat-card-actions{
+      margin: 0;
+    }
+    .mat-form-field {
+     // display: block; 
+      margin: 10px 10px;
+    }       
+  }

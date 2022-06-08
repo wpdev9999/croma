@@ -1,0 +1,23 @@
+:host {
+    .mat-icon {
+      vertical-align: middle;
+      margin-right: 20px;
+    }
+    .mat-list-item{
+      color: #fff;
+      line-height: 1.6;
+      transition: all 0.5s ease;
+    }
+    .active{
+      background-color: #fff;
+      padding: 2px 5px;
+      color: #fff;
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      margin: 0 1rem;
+      background-image: linear-gradient(195deg,#ec407a,#d81b60);
+      border-radius: 6px;
+    }
+    
+}
+  

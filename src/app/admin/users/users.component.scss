@@ -1,0 +1,35 @@
+.mat-elevation-z8{
+    margin-top: 50px;
+}
+.search-container {
+    float: right;
+    margin: 25px 25px 0 0;
+    
+}
+table{
+    width: 100%;
+    button{
+        margin-left: 10px;
+    }
+    th,td:last-child{
+        text-align: center;
+    }
+}
+
+.description{
+    padding: 0 20px;
+    border-radius: 3px;
+    margin: 0 20px;
+    padding: 15px;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14),0 7px 10px -5px rgba(244,67,54,.4);
+    background: linear-gradient(60deg, #387945, #73464600);
+    display: flex;
+    justify-content: space-between;
+    .table-title{
+        color: white;
+        font-size: 20px;
+    }
+    button{
+        float: right;
+    }
+}
