@@ -77,8 +77,8 @@ export class UsersComponent implements OnInit  {
   }
 
   delete(element : Users){
-    let confirm = window.confirm('Are you sure you want delete this record: ' + element.name);
-    
+    let confirm = window.confirm('Are you sure you want delete this record? ' + element.name);
+        
     if(confirm){
         this.api.deleteUser(element.id||0).subscribe({
           next: (res:Users[]) => {

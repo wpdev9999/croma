@@ -36,5 +36,8 @@ export class UsersService {
     return this.http.delete<Users[]>(this.apiURL + '/users/'+id).pipe(map(res => res));
   }
 
+  checkUser(username: string, password: string): Observable<any>{
+    return this.http.get<any>(this.apiURL + '/login?username='+username+'&password='+password).pipe(map(res => res));
+  }
 
 }
