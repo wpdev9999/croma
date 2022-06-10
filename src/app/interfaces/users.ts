@@ -21,3 +21,11 @@ export interface Users {
         bs: string
     ]
 }
+
+
+export interface usersLogin {
+    id:number,
+    name: string,
+    username: string,
+    password: string,
+}

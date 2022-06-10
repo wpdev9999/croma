@@ -1,7 +1,9 @@
+import { newArray } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { toArray } from 'rxjs';
 import { UsersService } from '../services/users.service';
 
 @Component({
@@ -11,6 +13,7 @@ import { UsersService } from '../services/users.service';
 })
 export class LoginComponent implements OnInit {
 
+  isLoggedIn: boolean = false;
   constructor(private router: Router, private fb:FormBuilder, private api: UsersService, private toast: ToastrService) { 
     
   }
@@ -20,9 +23,10 @@ export class LoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
-
-    //if logged in User redirect to admin
-    //this.router.navigateByUrl('/admin');
+    this.isLoggedIn = this.api.checkLogin();
+    if(this.isLoggedIn){
+      this.router.navigateByUrl('/admin');
+    }
   }
 
   
@@ -36,6 +40,7 @@ export class LoginComponent implements OnInit {
             console.log(res);          
               this.toast.success('Welcome bro ! '+res[0].name,'Success');
               this.router.navigateByUrl('/admin');
+              localStorage.setItem('user', JSON.stringify(res[0]));
           }
           else{
             this.toast.error('Sorry, your data is not matched','Errro!');

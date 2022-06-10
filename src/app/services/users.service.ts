@@ -40,4 +40,11 @@ export class UsersService {
     return this.http.get<any>(this.apiURL + '/login?username='+username+'&password='+password).pipe(map(res => res));
   }
 
+  checkLogin(){
+    if(localStorage.getItem('user')){
+      return true
+    }
+    return false   
+  }
+
 }
