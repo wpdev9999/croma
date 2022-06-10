@@ -11,9 +11,12 @@ export class AppComponent {
   title = 'croma';
 
   constructor(private bnIdle: BnNgIdleService, private router: Router) { // initiate it in your component constructor
+    
     this.bnIdle.startWatching(60).subscribe((res) => {
+      if(res){
           localStorage.removeItem('user');
           this.router.navigateByUrl('/login');
+        }
     })
   }
 

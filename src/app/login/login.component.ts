@@ -36,8 +36,7 @@ export class LoginComponent implements OnInit {
       this.api.checkUser(this.loginForm.value.username, this.loginForm.value.password).subscribe({
         next: (res) => {
           if(res.length == 1){
-            
-            console.log(res);          
+            //console.log(res);          
               this.toast.success('Welcome bro ! '+res[0].name,'Success');
               this.router.navigateByUrl('/admin');
               localStorage.setItem('user', JSON.stringify(res[0]));

@@ -41,6 +41,7 @@ export class UsersComponent implements OnInit  {
     
     this.api.getAll().subscribe({
       next: (res:Users[]) => {
+        console.log(res.length);
         this.listData = new MatTableDataSource(res);
         this.refreshTable();        
         //this.toast.success('Fetched Users', 'Success');
