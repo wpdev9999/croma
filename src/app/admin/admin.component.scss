@@ -4,14 +4,17 @@
     height: 100%;
   }
   mat-drawer {
-    width: 200px;
+    //width: 200px;
+    width: 10vw;
     background: #222a3c;
     border-radius: 0 10px 10px 0;
+    overflow: hidden;
   }
   
-  mat-drawer-container {
+  .mat-drawer-container {
     height: 100%;
   }
+  
   
   mat-drawer-content {
     padding: 20px;

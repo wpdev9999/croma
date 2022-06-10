@@ -43,8 +43,8 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('user', JSON.stringify(res[0]));
           }
           else{
-            this.toast.error('Sorry, your data is not matched','Errro!');
-          }  
+            this.toast.error('Sorry, your data is not matched','Error!');  
+          }
         },
         error: (err) => {
           this.toast.error(err.message, err.status);
@@ -53,8 +53,8 @@ export class LoginComponent implements OnInit {
           //this.toast.clear();
         }
       })
-
-
-
   }
+
+
+
 }
