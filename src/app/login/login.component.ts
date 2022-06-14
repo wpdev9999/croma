@@ -1,9 +1,7 @@
-import { newArray } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { toArray } from 'rxjs';
 import { UsersService } from '../services/users.service';
 
 @Component({
@@ -46,10 +44,11 @@ export class LoginComponent implements OnInit {
           }
         },
         error: (err) => {
+          //this.toast.
           this.toast.error(err.message, err.status);
         },
         complete: () =>{
-          //this.toast.clear();
+          //this.toast.previousToastMessage.;
         }
       })
   }
