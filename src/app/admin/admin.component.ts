@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { BnNgIdleService } from 'bn-ng-idle';
+
 
 @Component({
   selector: 'app-admin',
@@ -10,15 +9,7 @@ import { BnNgIdleService } from 'bn-ng-idle';
 export class AdminComponent implements OnInit {
   sideBarOpen = true;
 
-  constructor(private bnIdle: BnNgIdleService, private router: Router) {
-
-    // Idle for 1 minute
-    this.bnIdle.startWatching(60).subscribe((res) => {
-      if(res){
-          localStorage.removeItem('user');
-          this.router.navigateByUrl('/login');
-        }
-    })
+  constructor() {  
 
    }
 

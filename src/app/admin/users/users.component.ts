@@ -44,7 +44,6 @@ export class UsersComponent implements OnInit  {
         console.log(res.length);
         this.listData = new MatTableDataSource(res);
         this.refreshTable();        
-        //this.toast.success('Fetched Users', 'Success');
       },
       error: (err) => {
         this.toast.error(err.message, err.status);

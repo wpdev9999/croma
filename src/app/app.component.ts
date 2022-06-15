@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { BnNgIdleService } from 'bn-ng-idle';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'croma';
 
-  constructor() { // initiate it in your component constructor
+  constructor(private bnIdle: BnNgIdleService, private router: Router) { // initiate it in your component constructor
+
+
+    // Idle for 1 minute
+    this.bnIdle.startWatching(60).subscribe((res) => {
+      
+      if(res){
+          localStorage.removeItem('user');
+          this.router.navigateByUrl('/login');
+        }
+    })
+    // End Idle section
+
   }
 
 }
