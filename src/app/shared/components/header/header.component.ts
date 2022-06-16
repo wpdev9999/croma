@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   logout(){
     localStorage.removeItem('user');
-    this.router.navigateByUrl('/login');
+    this.router.navigate(['login']);
   }
 
   ngOnDestroy(): void{

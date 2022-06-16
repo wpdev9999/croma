@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginRoutingModule } from './login-routing.module';
+import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -9,14 +9,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'; 
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule,
+    AuthRoutingModule,
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
@@ -25,4 +27,4 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule
   ]
 })
-export class LoginModule { }
+export class AuthModule { }

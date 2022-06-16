@@ -18,7 +18,7 @@ export class AppComponent {
       
       if(res){
           localStorage.removeItem('user');
-          this.router.navigateByUrl('/login');
+          this.router.navigate(['login']);
         }
     })
     // End Idle section

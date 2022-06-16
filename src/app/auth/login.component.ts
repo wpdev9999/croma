@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
           if(res.length == 1){
             //console.log(res);          
               this.toast.success('Welcome bro ! '+res[0].name,'Success');
-              this.router.navigateByUrl('/admin');
+              this.router.navigate(['admin']);
               localStorage.setItem('user', JSON.stringify(res[0]));
           }
           else{

@@ -7,7 +7,7 @@ import { LoginGuard } from './guards/login.guard';
 const routes: Routes = [
 
 { path: '', pathMatch:'full', redirectTo:'login'},
-{ path: 'login', canActivate:[LoginGuard], loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
+{ path: 'login', canActivate:[LoginGuard], loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
 { path: 'admin', canActivate:[AdminGuard], loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
 { path: '**', component: PageNotFoundComponent}
   
