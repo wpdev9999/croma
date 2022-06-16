@@ -9,6 +9,7 @@ import { Users } from '../interfaces/users';
 export class UsersService {
 
   private apiURL = "http://localhost:3000";
+  
 
   httpOptions = {
 
@@ -18,7 +19,7 @@ export class UsersService {
   }
 
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {console.log(this.apiURL); }
 
   getAll(): Observable<Users[]> {
     return this.http.get<Users[]>(this.apiURL + '/users/').pipe(map(res => res));

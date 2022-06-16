@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   logout(){
-    //localStorage.removeItem('user');
+    localStorage.removeItem('user');
     this.router.navigateByUrl('/login');
   }
 

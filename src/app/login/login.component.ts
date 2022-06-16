@@ -11,7 +11,7 @@ import { UsersService } from '../services/users.service';
 })
 export class LoginComponent implements OnInit {
 
-  isLoggedIn: boolean = false;
+  
   constructor(private router: Router, private fb:FormBuilder, private api: UsersService, private toast: ToastrService) { 
     
   }
@@ -21,10 +21,7 @@ export class LoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.isLoggedIn = this.api.checkLogin();
-    if(this.isLoggedIn){
-      this.router.navigateByUrl('/admin');
-    }
+    
   }
 
   
