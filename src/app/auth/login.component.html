@@ -1,5 +1,5 @@
 <div class="signin-content">
-    <mat-card class="login-card mat-elevation-z9">
+    <mat-card class="login-card mat-elevation-z9 ">
         <mat-card-title> Welcome  </mat-card-title>
       <mat-card-content>
         
@@ -18,9 +18,10 @@
                 <mat-card-actions>
                 <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
                 <button mat-raised-button color="warn" type="reset" [disabled]="!loginForm.valid && !loginForm.touched">Reset</button>
-                
+                <a mat-link color="primary" routerLink='/auth/signup'>New User?</a>                 
               </mat-card-actions>
               </form>
+              
       </mat-card-content>
     </mat-card>
   </div>

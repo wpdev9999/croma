@@ -10,6 +10,7 @@ import { usersLogin } from '../../../interfaces/users';
 export class HeaderComponent implements OnInit, OnDestroy {
   loggedInUser = <usersLogin>{};
   loggedInUserName : string = '';
+  menuOpen : boolean = true;
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 
   constructor(private router: Router) { }
@@ -20,6 +21,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   toggleSideBar() {
     this.toggleSideBarForMe.emit();
+    this.menuOpen = !this.menuOpen;
     // setTimeout(() => {
     //   window.dispatchEvent(
     //     new Event('resize')
@@ -30,11 +32,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   logout(){
     localStorage.removeItem('user');
-    this.router.navigate(['login']);
+    this.router.navigate(['auth']);
   }
 
   ngOnDestroy(): void{
-    localStorage.removeItem('user');
+    //localStorage.removeItem('user');
   }
 
 }

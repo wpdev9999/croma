@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
-import { BnNgIdleService } from 'bn-ng-idle';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,7 @@ import { BnNgIdleService } from 'bn-ng-idle';
       preventDuplicates: true,
     }),
   ],
-  providers: [BnNgIdleService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

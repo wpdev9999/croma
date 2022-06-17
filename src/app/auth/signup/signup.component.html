@@ -1,1 +1,125 @@
-<p>signup works!</p>
+<div  class="w-full">
+  <div class="w-12/12 flex h-screen justify-center items-center">
+  <form [formGroup]="newUserForm" (ngSubmit)="signupFormSubmit()" class="">
+
+      <mat-card class="signup-card mat-elevation-z9 shadow-orange-800 shadow-lg">
+          <mat-card-title> {{actionBtn}}  </mat-card-title>
+        <mat-card-content>
+
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/2 pr-4">
+              <mat-form-field>
+                <input matInput placeholder="Name" formControlName="name" required>
+              </mat-form-field>
+            </div>
+            <div class="w-full md:w-1/2 pr-4">
+              <mat-form-field>
+                <input matInput placeholder="Username" formControlName="username" required>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/2 md:pr-4">
+              <mat-form-field>
+                <input matInput placeholder="Email" formControlName="email" required>
+              </mat-form-field>
+            </div>
+            <div class="w-full md:w-1/2 md:pr-4">
+              <mat-form-field>
+                <input type="password" matInput placeholder="Password" formControlName="password" required>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/2 md:pr-4">
+              <mat-form-field>
+                <input matInput placeholder="Phone" formControlName="phone" required>
+              </mat-form-field>
+            </div>
+            <div class="w-full md:w-1/2 md:pr-4">
+              <mat-form-field>
+                <input matInput placeholder="Website" formControlName="website" required>
+            </mat-form-field>
+            </div>
+          </div>
+
+          <h4 class="text-pink-400 w-min shadow-sm shadow-slate-400 p-3"> Address </h4>
+          <div class="flex flex-wrap" formGroupName="address">
+            
+            <div class="w-full md:w-1/2 md:pr-4">
+              <mat-form-field>
+                <input matInput placeholder="Street" formControlName="street" required>
+                </mat-form-field>
+            </div>
+            <div class="w-full md:w-1/2 md:pr-4">
+              <mat-form-field>
+                <input matInput placeholder="Suite" formControlName="suite" required>
+              </mat-form-field>
+            </div>
+            <div class="w-full md:w-1/2 md:pr-4">
+              <mat-form-field>
+                <input matInput placeholder="City" formControlName="city" required>
+              </mat-form-field>
+            </div>
+            <div class="w-full md:w-1/2 md:pr-4">
+              <mat-form-field>
+                <input matInput placeholder="Zipcode" formControlName="zipcode" required>
+              </mat-form-field>
+            </div>
+            <div class="w-full">
+              <h4 class="text-pink-400 w-min shadow-sm shadow-slate-400 p-3"> Geo </h4>
+            </div>
+
+            <div formGroupName="geo" class="flex w-full">
+              <div class="w-full md:w-1/2 md:pr-4">
+                <mat-form-field>
+                    <input matInput placeholder="Lattitide" formControlName="lat" required>
+                </mat-form-field>
+              </div>
+              <div class="w-full md:w-1/2 md:pr-4">
+                  <mat-form-field>
+                      <input matInput placeholder="Longtitude" formControlName="lng" required>
+                  </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="text-pink-400 w-min shadow-sm shadow-slate-400 p-3"> Company </h4>
+          <div class="flex flex-wrap" formGroupName="company">
+            <div class="w-full md:w-1/2 md:pr-4">
+              <mat-form-field>
+                <input matInput placeholder="Company Name" formControlName="name" required>
+              </mat-form-field>
+            </div>
+            <div class="w-full md:w-1/2 md:pr-4">
+              <mat-form-field>
+                <input matInput placeholder="catchPhrase" formControlName="catchPhrase" required>
+              </mat-form-field>
+            </div>
+            <div class="w-full md:w-1/2 md:pr-4">
+              <mat-form-field>
+                <input matInput placeholder="bs" formControlName="bs" required>
+              </mat-form-field>
+            </div>
+          </div> 
+
+
+          <!-- <div class="flex flex-wrap">
+            <div class="w-full md:w-1/2 md:pr-4">
+            </div>
+            <div class="w-full md:w-1/2 md:pr-4">
+            </div>
+          </div> -->
+         </mat-card-content>
+
+         <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!newUserForm.valid || !newUserForm.touched">{{actionBtn}}</button>
+          <button mat-raised-button color="warn" type="reset" [disabled]="!newUserForm.touched">Reset</button>
+        </mat-card-actions>
+      </mat-card>
+
+  </form>
+</div>
+</div>

@@ -3,6 +3,7 @@ export interface Users {
     name:string,
     username:string,
     email:string,
+    password:string,
     address: [
         street: string,
         suite: string,
