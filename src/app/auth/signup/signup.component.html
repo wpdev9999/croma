@@ -1,9 +1,9 @@
-<div  class="w-full">
-  <div class="w-12/12 flex h-screen justify-center items-center">
-  <form [formGroup]="newUserForm" (ngSubmit)="signupFormSubmit()" class="">
+<div  class="w-full h-full grid">
+  <div class="w-12/12 flex justify-center items-center">
+  <form [formGroup]="newUserForm" (ngSubmit)="signupFormSubmit()">
 
-      <mat-card class="signup-card mat-elevation-z9 shadow-orange-800 shadow-lg">
-          <mat-card-title> {{actionBtn}}  </mat-card-title>
+      <mat-card class="signup-card mat-elevation-z9 shadow-orange-800 shadow-lg p-4">
+          <mat-card-title class="text-center w-max shadow-md text-pink-400 shadow-neutral-500 mx-auto p-3"> {{actionBtn}}  </mat-card-title>
         <mat-card-content>
 
           <div class="flex flex-wrap">
@@ -105,16 +105,9 @@
             </div>
           </div> 
 
-
-          <!-- <div class="flex flex-wrap">
-            <div class="w-full md:w-1/2 md:pr-4">
-            </div>
-            <div class="w-full md:w-1/2 md:pr-4">
-            </div>
-          </div> -->
          </mat-card-content>
 
-         <mat-card-actions>
+         <mat-card-actions class="text-center">
           <button mat-raised-button color="primary" type="submit" [disabled]="!newUserForm.valid || !newUserForm.touched">{{actionBtn}}</button>
           <button mat-raised-button color="warn" type="reset" [disabled]="!newUserForm.touched">Reset</button>
         </mat-card-actions>

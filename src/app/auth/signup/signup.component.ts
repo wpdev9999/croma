@@ -13,7 +13,10 @@ import { UsersService } from 'src/app/services/users.service';
 export class SignupComponent implements OnInit {
 
   actionBtn :string = "Sign Up";
-  signUpData = {};
+  data:any = null;
+  signUpData: object = {} ;
+
+  
 
   constructor(private fb:FormBuilder, private api: UsersService, private toast: ToastrService, private router: Router) {   
   }
@@ -53,17 +56,12 @@ export class SignupComponent implements OnInit {
 
       if(this.newUserForm.valid){
         this.api.addUser(this.newUserForm.value).subscribe({
-          next: (res:Users[]) => {
-            this.toast.success('User : '+ this.newUserForm.value.name, 'Success');
-            //console.log(res);
-            // this.signUpData = {
-            //   id:this.res.id,
-            //   username:res.username,
-            //   name:res.name,
-            // };
-            // this.router.navigate(['admin']);
+          next: (res) => {
+            this.data = res;
+            this.signUpData = {id: this.data.id, name: this.data.name, username: this.data.username};
             localStorage.setItem('user', JSON.stringify(this.signUpData));
-            //console.log(JSON.stringify(res));
+            this.toast.success('User : '+ this.newUserForm.value.name, 'Success');
+            if(this.signUpData) this.router.navigate(['/admin']);
           },
           error: (err) => {
             this.toast.error(err.message, err.status);
