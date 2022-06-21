@@ -11,9 +11,12 @@ export class AppComponent {
   title = 'croma';
 
   constructor(private idle: IdleService, private router: Router) { // initiate it in your component constructor
-    // Idle for 1 minute
-    //this.idle.startTimer();
-    // End Idle section
+    idle.idle$.subscribe(s => {
+      console.log('im idle, zzz'),
+      this.router.navigate(['/'])
+    }
+    );
+    idle.wake$.subscribe(s => console.log('im awake!'));
 
   }
 
