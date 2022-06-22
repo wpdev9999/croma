@@ -11,12 +11,12 @@ export class AppComponent {
   title = 'croma';
 
   constructor(private idle: IdleService, private router: Router) { // initiate it in your component constructor
-    idle.idle$.subscribe(s => {
-      console.log('im idle, zzz'),
-      this.router.navigate(['/'])
-    }
-    );
-    idle.wake$.subscribe(s => console.log('im awake!'));
+    // idle.idle$.subscribe(s => {
+    //   console.log('im idle, zzz'),
+    //   this.router.navigate(['/'])
+    // }
+    // );
+    // idle.wake$.subscribe(s => console.log('im awake!'));
 
   }
 

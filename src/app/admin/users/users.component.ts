@@ -16,7 +16,7 @@ import { UserModalComponent } from './user-modal/user-modal.component';
 export class UsersComponent implements OnInit  {
 
   listData!: MatTableDataSource<any>
-  public displayedColumns : string [] = ['name', 'username', 'email', 'action'];
+  public displayedColumns : string [] = ['name', 'username', 'email', 'profile', 'action'];
   
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -41,7 +41,7 @@ export class UsersComponent implements OnInit  {
     
     this.api.getAll().subscribe({
       next: (res:Users[]) => {
-        console.log(res.length);
+        //console.log(res.length);
         this.listData = new MatTableDataSource(res);
         this.refreshTable();        
       },

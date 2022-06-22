@@ -28,7 +28,7 @@ export class IdleService {
     }
     // User interaction, reset start-idle-timer
     clearTimeout(this.countDown);
-    console.log(typeof this.countDown);
+    //console.log(typeof this.countDown);
     
     this.countDown = setTimeout(() => {
         // Countdown done without interaction - emit Idle
