@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Users } from 'src/app/interfaces/users';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -13,9 +14,6 @@ export class SignupComponent implements OnInit {
 
   actionBtn: string = "Sign Up";
   data: any = null;
-  signUpData: object = {};
-  shortLink: string = "";
-  loading: boolean = false; // Flag variable
   file: File | null = null; // Variable to store file
   url: any = null; 
 
@@ -58,20 +56,20 @@ export class SignupComponent implements OnInit {
 
     if (this.newUserForm.valid) {
       this.api.addUser(this.newUserForm.value).subscribe({
-        next: (res) => {
-          this.data = res;
-          console.log(res);
-          this.signUpData = { id: this.data.id, name: this.data.name, username: this.data.username };
-          localStorage.setItem('user', JSON.stringify(this.signUpData));
+        next: (res:any) => {
+          console.log(res.id);
+         // this.data = res;
+          this.data = { id: res.id, name: res.name, username: res.username };
+          localStorage.setItem('user', JSON.stringify(this.data));
           this.toast.success('User : ' + this.newUserForm.value.name, 'Success');
-          if (this.signUpData) this.router.navigate(['/admin']);
+          if (this.data) this.router.navigate(['/admin']);
         },
         error: (err) => {
           this.toast.error(err.message, err.status);
         },
-        complete: () => {
-          //this.toast.clear();
-        }
+        // complete: () => {
+        //   //this.toast.clear();
+        // }
       })
     }
 
@@ -92,21 +90,5 @@ export class SignupComponent implements OnInit {
     }
 
   }
-
-  // OnClick of button Upload
-  // onUpload() {
-    
-  //   console.log(this.file);
-  //   this.fileUploadService.upload(this.file).subscribe(
-  //       (event: any) => {
-  //           if (typeof (event) === 'object') {
-  //               // Short link via api response
-  //               this.shortLink = event.link;
-  //               console.log(this.shortLink);
-  //           }
-  //       }
-  //   );
-  // }
-
 
 }
